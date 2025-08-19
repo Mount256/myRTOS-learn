@@ -1,0 +1,93 @@
+/**** 系统开始，先调用高优先级任务AppTaskHigh ****/
+AppTaskHigh 准备获取信号量！
+
+AppTaskHigh 已获取信号量，正在运行中。
+/**** AppTaskHigh进入延时态，任务切换至AppTaskMed ****/
+
+AppTaskMed 正在运行中。
+/**** AppTaskMed进入延时态，任务切换至AppTaskLow ****/
+
+AppTaskLow 准备获取信号量！
+/**** AppTaskLow进入阻塞态，此时系统调用空闲任务，等待延时结束 ****/
+/**** 当延时1s结束后，AppTaskMed和AppTaskHigh均转为就绪态，调度执行高优先级AppTaskHigh ****/
+
+AppTaskHigh 释放了信号量!
+/**** AppTaskHigh进入延时态，AppTaskLow由阻塞态转变为就绪态 ****/
+/****  切换至优先级更高的AppTaskMed ****/
+
+AppTaskMed 正在运行中。
+/**** AppTaskMed进入延时态，任务切换至AppTaskLow ****/
+
+/********* ！！！！从这里开始发生优先级反转！！！！ *********/
+/**** AppTaskLow由就绪态转变为运行态 ****/
+
+AppTaskLow 已获取信号量，正在运行中。
+/**** AppTaskLow进入延时态，任务切换至高优先级AppTaskHigh ****/
+
+AppTaskHigh 准备获取信号量！
+/**** AppTaskHigh进入阻塞态，因为AppTaskLow优先级最低，所以切换至AppTaskMed ****/
+
+AppTaskMed 正在运行中。
+/**** 执行AppTaskMed的延时函数，系统发现AppTaskLow未达到设定的延时时间（3s），所以依然处于延时态 ****/
+/**** 而AppTaskHigh依然处于阻塞态，所以任务无法切换，继续执行AppTaskMed，下面也一样 ****/
+
+AppTaskMed 正在运行中。
+
+AppTaskMed 正在运行中。
+/**** 第三次执行AppTaskMed的延时函数，系统发现AppTaskLow已达到设定的延时时间（3s），转为就绪态 ****/
+/**** 而AppTaskHigh依然处于阻塞态，所以系统只能切换到AppTaskLow ****/
+
+AppTaskLow 释放了信号量!
+/**** 此时AppTaskHigh由阻塞态转变为就绪态，然后任务调度后被运行 ****/
+
+AppTaskHigh 已获取信号量，正在运行中。
+
+AppTaskHigh 释放了信号量!
+/**** ！！！！如此这般，一次优先级反转过程结束！！！！ ****/
+/**** 总结：AppTaskHigh需要等待优先级更低的AppTaskMed 完成才获得信号量 ****/
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 准备获取信号量！
+
+AppTaskLow 已获取信号量，正在运行中。
+
+AppTaskHigh 准备获取信号量！
+
+AppTaskMed 正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 释放了信号量!
+
+AppTaskHigh 已获取信号量，正在运行中。
+
+AppTaskHigh 释放了信号量!
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 准备获取信号量！
+
+AppTaskLow 已获取信号量，正在运行中。
+
+AppTaskHigh 准备获取信号量！
+
+AppTaskMed 正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 释放了信号量!
+
+AppTaskHigh 已获取信号量，正在运行中。
+
+AppTaskHigh 释放了信号量!
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 准备获取信号量！
+
+AppTaskLow 已获取信号量，正在运行中。
