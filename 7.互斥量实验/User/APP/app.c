@@ -11,7 +11,7 @@
 *******************************************************************
 */
 
-OS_SEM Sem;      // 二值信号量     
+OS_MUTEX TestMutex;      // 互斥量   
 
 /*
 *************************************************************************
@@ -120,11 +120,10 @@ static void AppTaskStart (void *arg)
     CPU_IntDisMeasMaxCurReset();  // 复位（清零）当前最大关中断时间
 #endif
 
-	/* 创建二值信号量 Sem */
-    OSSemCreate((OS_SEM      *)&Sem,    // 指向信号量变量的指针
-               (CPU_CHAR    *)"Sem",    // 信号量的名字
-               (OS_SEM_CTR   )1,        // 信号量这里是指示事件发生，所以赋值为0，表示事件还没有发生
-               (OS_ERR      *)&err);    // 错误类型
+	/* 创建互斥信号量 Mutex */
+	OSMutexCreate ((OS_MUTEX  *)&TestMutex,       // 指向信号量变量的指针
+                   (CPU_CHAR  *)"Mutex For Test", // 信号量的名字
+                   (OS_ERR    *)&err);            // 错误类型
 	
 	/********HIGH TASK CREATE*********/
 	OSTaskCreate( (OS_TCB 		*) 	&AppTaskHighTCB,  				/* 任务控制块 		*/
@@ -192,24 +191,24 @@ static  void  AppTaskHigh ( void * p_arg )
 
     while (DEF_TRUE) // 任务体，通常写成一个死循环
 	{   
-		// 获取二值信号量 Sem，若未获取到则一直等待
-		printf("\r\nAppTaskHigh 准备获取信号量！\r\n");
-		OSSemPend ((OS_SEM   *)&Sem,  //等待该信号量被发布
-                  (OS_TICK   )0,      //无期限等待
-                  (OS_OPT    )OS_OPT_PEND_BLOCKING,  // 如果没有信号量可用就等等
-                  (CPU_TS   *)0,          // 不需要时间戳
-                  (OS_ERR   *)&err);      // 返回错误类型
+		// 获取互斥量，若未获取到则一直等待
+		printf("\r\nAppTaskHigh 准备获取互斥量！\r\n");
+		OSMutexPend ((OS_MUTEX *)&TestMutex,  //等待该互斥量被发布
+                     (OS_TICK   )0,           //无期限等待
+                     (OS_OPT    )OS_OPT_PEND_BLOCKING,  // 如果没有信号量可用就等等
+                     (CPU_TS   *)0,           // 不需要时间戳
+                     (OS_ERR   *)&err);       // 返回错误类型
 		
-		printf("\r\nAppTaskHigh 已获取信号量，正在运行中。\r\n");
-		//for (i=0; i<1500000; i++);
-		//OSTimeDlyHMSM (0, 0, 1, 0, OS_OPT_TIME_PERIODIC, &err);  // 延时 1s
-		delay_ms(1000);
+		printf("\r\nAppTaskHigh 已获取互斥量，正在运行中。\r\n");
+		//for (i=0; i<3000000; i++);
+		//OSTimeDlyHMSM (0, 0, 1, 0, OS_OPT_TIME_PERIODIC, &err); 
+		delay_ms(1000);	
 
-		// 发布二值信号量 Sem
-		printf("\r\nAppTaskHigh 释放了信号量!\r\n");
-        OSSemPost((OS_SEM  *)&Sem,
-                  (OS_OPT   )OS_OPT_POST_1, // 发布给正在等待的最高优先级任务
-                  (OS_ERR  *)&err);
+		// 发布互斥量
+		printf("\r\nAppTaskHigh 释放了互斥量!\r\n");
+        OSMutexPost((OS_MUTEX*)&TestMutex,
+                    (OS_OPT   )OS_OPT_POST_NONE, // 进行任务调度
+                    (OS_ERR  *)&err);
 		
         OSTimeDlyHMSM (0, 0, 1, 0, OS_OPT_TIME_PERIODIC, &err);  // 延时 1s
     }
@@ -246,24 +245,24 @@ static  void  AppTaskLow ( void * p_arg )
 
     while (DEF_TRUE) // 任务体，通常写成一个死循环
 	{   
-		// 获取二值信号量 Sem，若未获取到则一直等待
-		printf("\r\nAppTaskLow 准备获取信号量！\r\n");
-		OSSemPend ((OS_SEM   *)&Sem,  //等待该信号量被发布
-                  (OS_TICK   )0,      //无期限等待
-                  (OS_OPT    )OS_OPT_PEND_BLOCKING,  // 如果没有信号量可用就等等
-                  (CPU_TS   *)0,          // 不需要时间戳
-                  (OS_ERR   *)&err);      // 返回错误类型
+		// 获取互斥量，若未获取到则一直等待
+		printf("\r\nAppTaskLow 准备获取互斥量！\r\n");
+		OSMutexPend ((OS_MUTEX *)&TestMutex,  //等待该互斥量被发布
+                     (OS_TICK   )0,           //无期限等待
+                     (OS_OPT    )OS_OPT_PEND_BLOCKING,  // 如果没有信号量可用就等等
+                     (CPU_TS   *)0,           // 不需要时间戳
+                     (OS_ERR   *)&err);       // 返回错误类型
 		
-		printf("\r\nAppTaskLow 已获取信号量，正在运行中。\r\n");
-		//for (i=0; i<6000000; i++);
-		//OSTimeDlyHMSM (0, 0, 3, 0, OS_OPT_TIME_PERIODIC, &err);  // 延时 3s
+		printf("\r\nAppTaskLow 已获取互斥量，正在运行中。\r\n");
+		//for (i=0; i<3000000; i++);
+		//OSTimeDlyHMSM (0, 0, 3, 0, OS_OPT_TIME_PERIODIC, &err);  
 		delay_ms(3000);
 		
-		// 发布二值信号量 Sem
-		printf("\r\nAppTaskLow 释放了信号量!\r\n");
-        OSSemPost((OS_SEM  *)&Sem,
-                  (OS_OPT   )OS_OPT_POST_1, // 发布给正在等待的最高优先级任务
-                  (OS_ERR  *)&err);
+		// 发布互斥量
+		printf("\r\nAppTaskLow 释放了互斥量!\r\n");
+        OSMutexPost((OS_MUTEX*)&TestMutex,
+                    (OS_OPT   )OS_OPT_POST_NONE, // 进行任务调度
+                    (OS_ERR  *)&err);
 
         OSTimeDlyHMSM (0, 0, 1, 0, OS_OPT_TIME_PERIODIC, &err);  // 延时 1s
 	}

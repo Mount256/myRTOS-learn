@@ -1,0 +1,118 @@
+/**** 系统开始，先调用高优先级任务AppTaskHigh ****/
+AppTaskHigh 准备获取互斥量！
+
+AppTaskHigh 已获取互斥量，正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 准备获取互斥量！
+
+AppTaskHigh 释放了互斥量!
+
+AppTaskMed 正在运行中。
+
+/********* ！！！！从这里开始！！！！ *********/
+AppTaskLow 已获取互斥量，正在运行中。
+
+AppTaskHigh 准备获取互斥量！
+
+AppTaskMed 正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 释放了互斥量!
+
+AppTaskHigh 已获取互斥量，正在运行中。
+
+/********* ！！！！到这里结束！！！！ *********/
+/* 注意：优先级继承并不能完全的消除优先级翻转的问题，它只是尽可能的降低优先级翻转带来的影响。*/
+
+AppTaskMed 正在运行中。
+
+AppTaskHigh 释放了互斥量!
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 准备获取互斥量！
+
+AppTaskLow 已获取互斥量，正在运行中。
+
+AppTaskHigh 准备获取互斥量！
+
+AppTaskMed 正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 释放了互斥量!
+
+AppTaskHigh 已获取互斥量，正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskHigh 释放了互斥量!
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 准备获取互斥量！
+
+AppTaskLow 已获取互斥量，正在运行中。
+
+AppTaskHigh 准备获取互斥量！
+
+AppTaskMed 正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 释放了互斥量!
+
+AppTaskHigh 已获取互斥量，正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskHigh 释放了互斥量!
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 准备获取互斥量！
+
+AppTaskLow 已获取互斥量，正在运行中。
+
+AppTaskHigh 准备获取互斥量！
+
+AppTaskMed 正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 释放了互斥量!
+
+AppTaskHigh 已获取互斥量，正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskHigh 释放了互斥量!
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 准备获取互斥量！
+
+AppTaskLow 已获取互斥量，正在运行中。
+
+AppTaskHigh 准备获取互斥量！
+
+AppTaskMed 正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 释放了互斥量!
+
+AppTaskHigh 已获取互斥量，正在运行中。
+
+AppTaskMed 正在运行中。
+
+AppTaskHigh 释放了互斥量!
+
+AppTaskMed 正在运行中。
+
+AppTaskLow 准备获取互斥量！
+
+AppTaskLow 已获取互斥量，正在运行中。

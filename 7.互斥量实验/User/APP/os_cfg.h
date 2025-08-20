@@ -60,9 +60,9 @@
 
 
                                              /* --------------------- MUTUAL EXCLUSION SEMAPHORES ------------------- */
-#define OS_CFG_MUTEX_EN                 0u   /* Enable (1) or Disable (0) code generation for MUTEX                   */
+#define OS_CFG_MUTEX_EN                 1u   /* Enable (1) or Disable (0) code generation for MUTEX                   */
 #define OS_CFG_MUTEX_DEL_EN             1u   /*     Include code for OSMutexDel()                                     */
-#define OS_CFG_MUTEX_PEND_ABORT_EN      1u   /*     Include code for OSMutexPendAbort()                               */
+#define OS_CFG_MUTEX_PEND_ABORT_EN      0u   /*     Include code for OSMutexPendAbort()                               */
 
 
                                              /* --------------------------- MESSAGE QUEUES -------------------------- */
@@ -73,10 +73,10 @@
 
 
                                              /* ----------------------------- SEMAPHORES ---------------------------- */
-#define OS_CFG_SEM_EN                   1u   /* Enable (1) or Disable (0) code generation for SEMAPHORES              */
+#define OS_CFG_SEM_EN                   0u   /* Enable (1) or Disable (0) code generation for SEMAPHORES              */
 #define OS_CFG_SEM_DEL_EN               1u   /*    Include code for OSSemDel()                                        */
-#define OS_CFG_SEM_PEND_ABORT_EN        0u   /*    Include code for OSSemPendAbort()                                  */
-#define OS_CFG_SEM_SET_EN               0u   /*    Include code for OSSemSet()                                        */
+#define OS_CFG_SEM_PEND_ABORT_EN        1u   /*    Include code for OSSemPendAbort()                                  */
+#define OS_CFG_SEM_SET_EN               1u   /*    Include code for OSSemSet()                                        */
 
 
                                              /* -------------------------- TASK MANAGEMENT -------------------------- */
