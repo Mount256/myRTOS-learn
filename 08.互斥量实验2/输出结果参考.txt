@@ -1,0 +1,60 @@
+
+AppTaskHigh 准备获取互斥量！
+
+AppTaskHigh 已获取互斥量，正在运行中。
+
+AppTaskLow 准备获取互斥量！
+
+AppTaskHigh 释放了互斥量!
+
+AppTaskLow 已获取互斥量（嵌套计数器=1）。
+
+AppTaskLow 已获取互斥量（嵌套计数器=2）。
+
+AppTaskHigh 准备获取互斥量！
+
+AppTaskLow 释放了互斥量（嵌套计数器=1）!
+
+AppTaskLow 释放了互斥量（嵌套计数器=0）!
+
+AppTaskHigh 已获取互斥量，正在运行中。
+
+AppTaskHigh 释放了互斥量!
+
+AppTaskLow 准备获取互斥量！
+
+AppTaskLow 已获取互斥量（嵌套计数器=1）。
+
+AppTaskLow 已获取互斥量（嵌套计数器=2）。
+
+AppTaskHigh 准备获取互斥量！
+
+AppTaskLow 释放了互斥量（嵌套计数器=1）!
+
+AppTaskLow 释放了互斥量（嵌套计数器=0）!
+
+AppTaskHigh 已获取互斥量，正在运行中。
+
+AppTaskHigh 释放了互斥量!
+
+AppTaskLow 准备获取互斥量！
+
+AppTaskLow 已获取互斥量（嵌套计数器=1）。
+
+AppTaskLow 已获取互斥量（嵌套计数器=2）。
+
+AppTaskHigh 准备获取互斥量！
+
+AppTaskLow 释放了互斥量（嵌套计数器=1）!
+
+AppTaskLow 释放了互斥量（嵌套计数器=0）!
+
+AppTaskHigh 已获取互斥量，正在运行中。
+
+AppTaskHigh 释放了互斥量!
+
+AppTaskLow 准备获取互斥量！
+
+AppTaskLow 已获取互斥量（嵌套计数器=1）。
+
+AppTaskLow 已获取互斥量（嵌套计数器=2）。
