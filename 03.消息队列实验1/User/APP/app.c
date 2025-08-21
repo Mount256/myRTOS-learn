@@ -118,6 +118,12 @@ static void AppTaskStart (void *arg)
 #ifdef CPU_CFG_INT_DIS_MEAS_EN
     CPU_IntDisMeasMaxCurReset();  // 复位（清零）当前最大关中断时间
 #endif
+
+	/********QUEUE CREATE*********/
+	OSQCreate ((OS_Q       *)&queue,            /* 指向消息队列的指针 */
+	           (CPU_CHAR   *)"Queue for test",  /* 队列的名字 		*/
+			   (OS_MSG_QTY  )20,                /* 最多可存放消息的数目 */
+			   (OS_ERR     *)&err);			    /* 返回错误类型 		*/
 	
 	/********POST TASK CREATE*********/
 	OSTaskCreate( (OS_TCB 		*) 	&AppTaskPostTCB,  				/* 任务控制块 		*/

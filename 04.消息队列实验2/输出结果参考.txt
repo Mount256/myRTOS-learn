@@ -1,23 +1,17 @@
 
 AppTaskPost1：发送消息的内容：你好，我是POST1！
 
-AppTaskPost2：发送消息的内容：你好，我是POST2！
-
-AppTaskPend：准备获取消息...
-
-AppTaskPost1：发送消息的内容：你好，我是POST1！
-
 AppTaskPost1：已成功发送消息！
-
-AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
-
-AppTaskPend：准备获取消息...
 
 AppTaskPost2：发送消息的内容：你好，我是POST2！
 
 AppTaskPost2：已成功发送消息！
 
-AppTaskPost1：发送消息的内容：你好，我是POST1！
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
 
 AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
 
@@ -27,15 +21,13 @@ AppTaskPost1：发送消息的内容：你好，我是POST1！
 
 AppTaskPost1：已成功发送消息！
 
-AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
-
-AppTaskPend：准备获取消息...
-
 AppTaskPost2：发送消息的内容：你好，我是POST2！
 
 AppTaskPost2：已成功发送消息！
 
-AppTaskPost1：发送消息的内容：你好，我是POST1！
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
 
 AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
 
@@ -45,15 +37,13 @@ AppTaskPost1：发送消息的内容：你好，我是POST1！
 
 AppTaskPost1：已成功发送消息！
 
-AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
-
-AppTaskPend：准备获取消息...
-
 AppTaskPost2：发送消息的内容：你好，我是POST2！
 
 AppTaskPost2：已成功发送消息！
 
-AppTaskPost1：发送消息的内容：你好，我是POST1！
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
 
 AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
 
@@ -63,15 +53,221 @@ AppTaskPost1：发送消息的内容：你好，我是POST1！
 
 AppTaskPost1：已成功发送消息！
 
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
 AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
 
 AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
 
 AppTaskPost2：发送消息的内容：你好，我是POST2！
 
 AppTaskPost2：已成功发送消息！
 
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
 AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
+
+AppTaskPend：准备获取消息...
+
+AppTaskPost1：发送消息的内容：你好，我是POST1！
+
+AppTaskPost1：已成功发送消息！
+
+AppTaskPost2：发送消息的内容：你好，我是POST2！
+
+AppTaskPost2：已成功发送消息！
+
+AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST1！
+
+AppTaskPend：准备获取消息...
 
 AppTaskPend：接收消息的长度：18字节，内容：你好，我是POST2！
 

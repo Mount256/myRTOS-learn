@@ -10,7 +10,7 @@
 *                        LOCAL DEFINES
 *************************************************************************
 */
-OS_Q queue;     //声明消息队列
+// OS_Q queue;     // 使用任务消息无需定义消息队列
 
 /*
 *************************************************************************
@@ -118,12 +118,6 @@ static void AppTaskStart (void *arg)
 #ifdef CPU_CFG_INT_DIS_MEAS_EN
     CPU_IntDisMeasMaxCurReset();  // 复位（清零）当前最大关中断时间
 #endif
-
-	/********QUEUE CREATE*********/
-	OSQCreate ((OS_Q       *)&queue,            /* 指向消息队列的指针 */
-	           (CPU_CHAR   *)"Queue for test",  /* 队列的名字 		*/
-			   (OS_MSG_QTY  )20,                /* 最多可存放消息的数目 */
-			   (OS_ERR     *)&err);			    /* 返回错误类型 		*/
 	
 	/********POST1 TASK CREATE*********/
 	OSTaskCreate( (OS_TCB 		*) 	&AppTaskPost1TCB,  				/* 任务控制块 		*/
@@ -196,13 +190,13 @@ static  void  AppTaskPost1 ( void * p_arg )
 		printf ( "\r\nAppTaskPost1：发送消息的内容：%s\r\n", msg );
 		OS_CRITICAL_EXIT();
 		
-	   /* 发布消息到消息队列 queue */
-		OSQPost ((OS_Q        *)&queue,          /* 消息变量指针 */
-                 (uint8_t     *)msg,             /* 要发送的数据的指针，将内存地址通过队列“发送出去”*/
-                 (OS_MSG_SIZE  )sizeof (msg),    /* 数据字节大小 */
-                 //(OS_OPT       )OS_OPT_POST_LIFO, /* 仅后进先出的形式 */
-				 (OS_OPT       )OS_OPT_POST_FIFO,   /* 仅先进先出的形式 */
-                 (OS_ERR      *)&err);              /* 返回错误类型 */
+	    /* 发布消息到任务 AppTaskPend */
+	    OSTaskQPost  ((OS_TCB      *)&AppTaskPendTCB,          /* 目标任务的控制块 */
+					  (uint8_t     *)msg,             /* 要发送的数据的指针 */
+                      (OS_MSG_SIZE  )sizeof (msg),    /* 数据字节大小 */
+                    //(OS_OPT       )OS_OPT_POST_LIFO, /* 仅后进先出的形式 */
+				      (OS_OPT       )OS_OPT_POST_FIFO,   /* 仅先进先出的形式 */
+                      (OS_ERR      *)&err);              /* 返回错误类型 */
 				 
 		if ( err == OS_ERR_NONE )  // 如果发送成功
 		{    
@@ -235,13 +229,13 @@ static  void  AppTaskPost2 ( void * p_arg )
 		printf ( "\r\nAppTaskPost2：发送消息的内容：%s\r\n", msg );
 		OS_CRITICAL_EXIT();
 		
-	   /* 发布消息到消息队列 queue */
-		OSQPost ((OS_Q        *)&queue,          /* 消息变量指针 */
-                 (uint8_t     *)msg,             /* 要发送的数据的指针，将内存地址通过队列“发送出去”*/
-                 (OS_MSG_SIZE  )sizeof (msg),    /* 数据字节大小 */
-                 //(OS_OPT       )OS_OPT_POST_LIFO, /* 仅后进先出的形式 */
-				 (OS_OPT       )OS_OPT_POST_FIFO,   /* 仅先进先出的形式 */
-                 (OS_ERR      *)&err);              /* 返回错误类型 */
+	    /* 发布消息到任务 AppTaskPend */
+	    OSTaskQPost  ((OS_TCB      *)&AppTaskPendTCB,          /* 目标任务的控制块 */
+					  (uint8_t     *)msg,             /* 要发送的数据的指针 */
+                      (OS_MSG_SIZE  )sizeof (msg),    /* 数据字节大小 */
+                    //(OS_OPT       )OS_OPT_POST_LIFO, /* 仅后进先出的形式 */
+				      (OS_OPT       )OS_OPT_POST_FIFO,   /* 仅先进先出的形式 */
+                      (OS_ERR      *)&err);              /* 返回错误类型 */
 				 
 		if ( err == OS_ERR_NONE )  // 如果发送成功
 		{    
@@ -275,13 +269,12 @@ static  void  AppTaskPend ( void * p_arg )
 		printf ( "\r\nAppTaskPend：准备获取消息...\r\n" );
 		OS_CRITICAL_EXIT();
 		
-		/* 请求消息队列 queue 的消息 */
-        msg = OSQPend ((OS_Q         *)&queue,     /* 消息变量指针 */
-                       (OS_TICK       )0,          /* 等待时长为无限 */
-                       (OS_OPT        )OS_OPT_PEND_BLOCKING, /* 如果没有获取到信号量就等待 */
-                       (OS_MSG_SIZE  *)&msg_size,  /* 获取消息的字节大小 */
-                       (CPU_TS       *)0,          /* 获取任务发送时的时间戳 */
-                       (OS_ERR       *)&err);      /* 返回错误 */
+		/* 阻塞任务，等待任务消息 */
+        msg = OSTaskQPend ((OS_TICK       )0,          /* 等待时长为无限 */
+                           (OS_OPT        )OS_OPT_PEND_BLOCKING, /* 如果没有获取到信号量就等待 */
+                           (OS_MSG_SIZE  *)&msg_size,  /* 获取消息的字节大小 */
+                           (CPU_TS       *)0,          /* 获取任务发送时的时间戳 */
+                           (OS_ERR       *)&err);      /* 返回错误 */
 
 		if ( err == OS_ERR_NONE )  // 如果接收成功
 		{    
