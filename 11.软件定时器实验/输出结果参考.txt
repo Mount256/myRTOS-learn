@@ -1,0 +1,48 @@
+Timer Over!
+定时1s，通过时间戳测得定时 1000878 us，即 1000 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999206 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999205 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999215 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999206 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999205 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999206 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
+Timer Over!
+定时1s，通过时间戳测得定时 0999214 us，即 0999 ms。
