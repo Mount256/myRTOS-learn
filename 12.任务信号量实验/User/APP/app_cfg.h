@@ -48,8 +48,9 @@
 */
 
 #define  APP_TASK_START_PRIO                        2
-#define  APP_TASK_TMR_STK_PRIO                      3
-#define  APP_TASK_TMR2_STK_PRIO                     3
+#define  APP_TASK_KEY0_PRIO                         3
+#define  APP_TASK_KEY1_PRIO                         3
+
 
 /*
 *********************************************************************************************************
@@ -59,8 +60,9 @@
 */
 
 #define  APP_TASK_START_STK_SIZE                    128
-#define	 APP_TASK_TMR_STK_SIZE 						256
-#define	 APP_TASK_TMR2_STK_SIZE 					256
+#define	 APP_TASK_KEY0_STK_SIZE						256
+#define	 APP_TASK_KEY1_STK_SIZE						256
+
 
 /*
 *********************************************************************************************************
