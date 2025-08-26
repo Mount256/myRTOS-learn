@@ -10,12 +10,5 @@
 
 ## 实验内容
 
-在uCOS中创建了三个任务`AppTaskPost()`、 `AppTaskPend1()`和 `AppTaskPend2()`。
-
-任务 `AppTaskPost()` 用于发送消息，任务 `AppTaskPend1()` 和`AppTaskPend2()`均用于接收上述消息，三个任务独立运行，并通过串口调试助手把结果打印出来。
-
-请在消息发送函数中尝试以下两种选项，并分别观察输出结果有什么不同：
-
-- `(OS_OPT)OS_OPT_POST_FIFO | OS_OPT_POST_ALL` 
-- `(OS_OPT)OS_OPT_POST_FIFO`
+本次的实验例程采用消息队列进行发送与接收消息，只不过存放消息的地方是在内存块中，在获取完消息的时候， 就进行释放内存块，反复使用内存块。
 
