@@ -2,7 +2,7 @@
 
 `Doc`文件夹的内容是一些相关知识点，可供参考。
 
-项目裁剪：在`os_cfg.h`和`stm32f10x_conf.h`中那一堆`#define`里可以自行修改是否保留对应代码。
+项目裁剪：在`os_cfg.h`和`stm32f10x_conf.h`中那一堆`#define`里可以自行修改是否保留对应代码。（注意：'OS_CFG_STAT_TASK_STK_CHK_EN'和'OS_CFG_DBG_EN'设置为`1u`）
 
 配置用户代码：在`app.c`和`app_cfg.h`里操作。
 
